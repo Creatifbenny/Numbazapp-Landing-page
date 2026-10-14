@@ -1,0 +1,25 @@
+/*
+ * PROVISIONAL design tokens.
+ *
+ * Every value below was sampled from the exported PNGs (Design exports/,
+ * local only) and is APPROXIMATE. Replace with the real brand tokens from
+ * Figma once they are available. Fonts are not chosen yet.
+ *
+ * Tailwind v4 has no JS config file; @theme is the Tailwind config. Each
+ * --color-* variable below generates utilities (bg-background, text-body,
+ * border-card, etc.).
+ */
+@theme {
+  --color-background: #043135; /* page background */
+  --color-footer: #043234; /* footer background */
+  --color-card: #10494f; /* card / panel background */
+  --color-primary: #12b76a; /* primary green: buttons, logo tile */
+  --color-mint: #37f4b4; /* mint accent: ticker, highlights */
+  --color-white: #ffffff; /* headings */
+  --color-body: #d1d5dc; /* body text */
+  --color-muted: #99a1af; /* muted text */
+  --color-dim: #6a7282; /* dimmer text */
+  --color-orange: #f79009; /* expenses accent */
+  --color-blue: #6172f3; /* credit / info accent */
+  --color-red: #f04438; /* problem accent */
+}

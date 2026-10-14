@@ -20,3 +20,12 @@ node_modules/
 
 # Local design exports (not committed)
 Design exports/
+
+# TypeScript / Next.js generated
+*.tsbuildinfo
+next-env.d.ts
+/out/
+/coverage
+
+# Keys
+*.pem
