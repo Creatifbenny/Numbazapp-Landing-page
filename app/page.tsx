@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Problem from "@/components/Problem";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import WaitlistDialog from "@/components/WaitlistDialog";
 import Solution from "@/components/Solution";
 import Ticker from "@/components/Ticker";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <SiteFooter />
+      <WaitlistDialog />
     </>
   );
 }

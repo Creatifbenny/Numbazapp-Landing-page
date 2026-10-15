@@ -12,12 +12,13 @@ or animation library.
 Desktop page built (static, no animation): sticky nav, hero (including the
 phone mockup and two floating cards), ticker strip, problem, solution,
 how-it-works and features sections, closing statement, final CTA panel and
-footer (`components/SiteHeader.tsx`, `Hero.tsx`, `PhoneMockup.tsx`,
-`Ticker.tsx`, `Problem.tsx`, `Solution.tsx`, `HowItWorks.tsx`,
-`Features.tsx`, `ClosingStatement.tsx`, `FinalCta.tsx`, `SiteFooter.tsx`).
-Tokens and fonts are provisional (Inter + Source Code Pro; real names
-unknown). Not built: signup popup (three `data-waitlist-trigger` buttons are
-in place), animations, mobile and tablet layouts. Anchors `#how-it-works` and
+footer, plus the waitlist popup (`components/WaitlistDialog.tsx`, UI only).
+The popup calls `submitWaitlist` in `lib/waitlist.ts`, a placeholder that
+waits 800ms and returns success; the real signup route plugs in there and
+nothing is saved yet. The popup shows a "Preview only" note unless
+`NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
+(Inter + Source Code Pro; real names unknown). Not built: the signup backend,
+animations, mobile and tablet layouts. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).
