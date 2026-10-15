@@ -5,8 +5,9 @@ Built from the desktop Figma export and deployed on Vercel.
 
 **Status: in progress.** The desktop page is built top to bottom, all static,
 and the waitlist popup opens from every "Get Early Access" button (UI only:
-`lib/waitlist.ts` is a placeholder, nothing is saved yet). Not built: the
-signup backend, animations, and mobile and tablet layouts. Design tokens in
+`lib/waitlist.ts` is a placeholder, nothing is saved yet). Responsive layouts are
+being added section by section (the nav has a hamburger menu below 768px).
+Not built: the signup backend and animations. Design tokens in
 `app/tokens.css` are provisional (sampled from PNGs) and the fonts are
 provisional stand-ins.
 

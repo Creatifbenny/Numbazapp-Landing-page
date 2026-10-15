@@ -17,8 +17,10 @@ The popup calls `submitWaitlist` in `lib/waitlist.ts`, a placeholder that
 waits 800ms and returns success; the real signup route plugs in there and
 nothing is saved yet. The popup shows a "Preview only" note unless
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
-(Inter + Source Code Pro; real names unknown). Not built: the signup backend,
-animations, mobile and tablet layouts. Anchors `#how-it-works` and
+(Inter + Source Code Pro; real names unknown). Responsive work in progress: the nav has
+a hamburger menu below 768px (`components/MobileMenu.tsx`); other sections
+are desktop-only until their responsive commits land. Not built: the signup
+backend, animations. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).

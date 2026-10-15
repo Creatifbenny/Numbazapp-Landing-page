@@ -37,7 +37,11 @@ export default function WaitlistDialog() {
       const trigger = target?.closest<HTMLElement>("[data-waitlist-trigger]");
       if (!trigger) return;
       event.preventDefault();
-      openerRef.current = trigger;
+      // A trigger inside a menu that closes on click can name the element
+      // that focus should return to instead.
+      const returnId = trigger.dataset.waitlistReturnTo;
+      openerRef.current =
+        (returnId ? document.getElementById(returnId) : null) ?? trigger;
       const dialog = dialogRef.current;
       if (!dialog || dialog.open) return;
 
