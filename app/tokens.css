@@ -26,6 +26,15 @@
 }
 
 /*
+ * PROVISIONAL snapshot-card gradient (solution section), sampled from the PNG
+ * (APPROXIMATE): top-left to bottom-right.
+ */
+@theme {
+  --color-snapshot-from: #36f0b1;
+  --color-snapshot-to: #22a176;
+}
+
+/*
  * PROVISIONAL phone-mockup colours, sampled from the phone region of the
  * desktop PNG (APPROXIMATE).
  */
