@@ -1,7 +1,13 @@
+import Hero from "@/components/Hero";
+import SiteHeader from "@/components/SiteHeader";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold text-white">Numbaz</h1>
-    </main>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 }

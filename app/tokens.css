@@ -3,7 +3,7 @@
  *
  * Every value below was sampled from the exported PNGs (Design exports/,
  * local only) and is APPROXIMATE. Replace with the real brand tokens from
- * Figma once they are available. Fonts are not chosen yet.
+ * Figma once they are available.
  *
  * Tailwind v4 has no JS config file; @theme is the Tailwind config. Each
  * --color-* variable below generates utilities (bg-background, text-body,
@@ -22,4 +22,19 @@
   --color-orange: #f79009; /* expenses accent */
   --color-blue: #6172f3; /* credit / info accent */
   --color-red: #f04438; /* problem accent */
+  --color-ink: #101828; /* ring around waitlist avatars */
+}
+
+/*
+ * PROVISIONAL fonts. The real font names are unknown; these are the closest
+ * free Google Fonts, loaded with next/font in app/layout.tsx:
+ *   sans: Inter (headings and body)
+ *   mono: Source Code Pro (pills, labels, figures). JetBrains Mono was tried
+ *         first but its Google Fonts build has no naira sign.
+ * Both are loaded with the latin and latin-ext subsets so the naira sign
+ * (U+20A6, in latin-ext) comes from the font and not from a fallback.
+ */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-source-code-pro), ui-monospace, monospace;
 }
