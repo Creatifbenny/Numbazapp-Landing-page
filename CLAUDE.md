@@ -9,11 +9,12 @@ Next.js (App Router), TypeScript, Tailwind CSS v4 (config lives in CSS:
 or animation library.
 
 ## Status
-Built so far: sticky nav and hero left column (`components/SiteHeader.tsx`,
-`components/Hero.tsx`), with an empty phone slot. Tokens and fonts are
-provisional (Inter + Source Code Pro; real names unknown). Later sections,
-phone mockup, ticker and signup popup are not built. Anchors `#how-it-works`
-and `#features` have no targets yet. Design exports are in `Design exports/`
+Built so far: sticky nav and hero (`components/SiteHeader.tsx`,
+`components/Hero.tsx`) including the phone mockup and two floating cards
+(`components/PhoneMockup.tsx`, static, no animation yet). Tokens and fonts are
+provisional (Inter + Source Code Pro; real names unknown). Ticker, later
+sections and the signup popup are not built. Anchors `#how-it-works` and
+`#features` have no targets yet. Design exports are in `Design exports/`
 (local only, gitignored).
 
 ## Rules

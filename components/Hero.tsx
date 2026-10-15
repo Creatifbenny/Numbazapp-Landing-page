@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import PhoneMockup from "./PhoneMockup";
 
 const AVATARS = [
   { letter: "A", className: "bg-primary" },
@@ -81,9 +82,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Empty slot for the phone mockup (added in a later step). */}
-        <div className="hidden lg:flex lg:justify-center" aria-hidden="true">
-          <div data-phone-slot className="h-[656px] w-[292px]" />
+        <div className="hidden lg:flex lg:justify-center">
+          <PhoneMockup />
         </div>
       </div>
     </section>

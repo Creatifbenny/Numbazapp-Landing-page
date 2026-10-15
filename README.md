@@ -3,10 +3,9 @@
 One-page site for awareness and waitlist signup (full name and email).
 Built from the desktop Figma export and deployed on Vercel.
 
-**Status: in progress.** Nav and hero (left column) are built; the phone
-mockup slot is empty and later sections are not built. Design tokens in
-`app/tokens.css` are provisional (sampled from PNGs) and the fonts are
-provisional stand-ins.
+**Status: in progress.** Nav and hero (including the phone mockup) are built;
+the ticker and later sections are not. Design tokens in `app/tokens.css` are
+provisional (sampled from PNGs) and the fonts are provisional stand-ins.
 
 ## Stack
 

@@ -22,7 +22,28 @@
   --color-orange: #f79009; /* expenses accent */
   --color-blue: #6172f3; /* credit / info accent */
   --color-red: #f04438; /* problem accent */
-  --color-ink: #101828; /* ring around waitlist avatars */
+  --color-ink: #101828; /* ring around waitlist avatars, dark text in phone */
+}
+
+/*
+ * PROVISIONAL phone-mockup colours, sampled from the phone region of the
+ * desktop PNG (APPROXIMATE).
+ */
+@theme {
+  --color-screen-top: #72f7cc; /* phone screen gradient, top */
+  --color-screen-bottom: #e6feff; /* phone screen gradient, bottom / light text */
+  --color-screen-green: #21d598; /* phone green cards, active tab, borders */
+  --color-screen-btn: #084348; /* Add Sale / Add Expense buttons */
+  --color-screen-row-border: #85e8c7; /* Recent Actions row border */
+  --color-device: #080e1a; /* phone body */
+  --color-device-edge: #212631; /* phone outer edge ring */
+  --color-device-bar: #343943; /* home indicator */
+  --color-badge-top: #31dfa6; /* count badge gradient, top */
+  --color-badge-bottom: #0e5a50; /* count badge gradient, bottom */
+  --color-float-green-border: #096048; /* floating card, sales */
+  --color-float-green-tile: #06453d; /* floating card icon tile, sales */
+  --color-float-blue-border: #254877; /* floating card, owing */
+  --color-float-blue-tile: #123b51; /* floating card icon tile, owing */
 }
 
 /*
