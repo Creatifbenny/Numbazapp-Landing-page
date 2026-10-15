@@ -58,6 +58,16 @@
 }
 
 /*
+ * Fluid type (APPROXIMATE, chosen for the responsive layouts): the hero H1
+ * scales from 40px at 375px wide to the desktop 68px at 1280px and up. The
+ * line height scales the same way and reaches the desktop 83.5px line pitch.
+ */
+@theme {
+  --text-fluid-h1: clamp(40px, calc(40px + (100vw - 375px) * 0.03094), 68px);
+  --text-fluid-h1--line-height: clamp(49.1px, calc(49.1px + (100vw - 375px) * 0.038011), 83.5px);
+}
+
+/*
  * PROVISIONAL fonts. The real font names are unknown; these are the closest
  * free Google Fonts, loaded with next/font in app/layout.tsx:
  *   sans: Inter (headings and body)
