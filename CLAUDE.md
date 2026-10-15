@@ -9,13 +9,13 @@ Next.js (App Router), TypeScript, Tailwind CSS v4 (config lives in CSS:
 or animation library.
 
 ## Status
-Built so far: sticky nav, hero (including the phone mockup and two floating
-cards) and the ticker strip (`components/SiteHeader.tsx`, `Hero.tsx`,
-`PhoneMockup.tsx`, `Ticker.tsx`). All static; no animation yet. Tokens and
-fonts are provisional (Inter + Source Code Pro; real names unknown). Later
-sections and the signup popup are not built. Anchors `#how-it-works` and
-`#features` have no targets yet. Design exports are in `Design exports/`
-(local only, gitignored).
+Built so far (desktop, static, no animation): sticky nav, hero (including the
+phone mockup and two floating cards), ticker strip, and the problem section
+(`components/SiteHeader.tsx`, `Hero.tsx`, `PhoneMockup.tsx`, `Ticker.tsx`,
+`Problem.tsx`). Tokens and fonts are provisional (Inter + Source Code Pro;
+real names unknown). Remaining sections and the signup popup are not built.
+Anchors `#how-it-works` and `#features` have no targets yet. Design exports
+are in `Design exports/` (local only, gitignored).
 
 ## Rules
 - No secrets in git. `.env` stays gitignored.
