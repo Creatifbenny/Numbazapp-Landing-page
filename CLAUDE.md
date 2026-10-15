@@ -19,9 +19,9 @@ nothing is saved yet. The popup shows a "Preview only" note unless
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
 (Inter + Source Code Pro; real names unknown). Responsive so far: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
-phone centred), ticker and problem sections. Desktop (1280px and up) is the
-unchanged design. The solution, how-it-works, features, closing, final CTA
-and footer sections are still desktop-only and overflow below about 340px. Not built: the signup
+phone centred), ticker, problem and solution sections. Desktop (1280px and up) is the unchanged design.
+Still desktop-only: the how-it-works, features, closing, final CTA and footer sections.
+Not built: the signup
 backend, animations. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in

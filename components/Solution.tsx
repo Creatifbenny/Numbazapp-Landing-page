@@ -36,26 +36,26 @@ export default function Solution() {
   return (
     <section
       aria-labelledby="solution-heading"
-      className="px-6 py-27 text-center"
+      className="px-5 py-[72px] text-center sm:px-8 md:py-24 xl:px-6 xl:py-27"
     >
-      <p className="mx-auto mb-[26px] inline-block rounded-full border border-primary/30 bg-primary/12 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-primary">
+      <p className="mx-auto mb-5 inline-block sm:mb-[26px] rounded-full border border-primary/30 bg-primary/12 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-primary">
         THE SOLUTION
       </p>
 
       <h2
         id="solution-heading"
-        className="mx-auto max-w-[660px] text-[55px] leading-[67.2px] font-extrabold tracking-[-0.015em] text-white"
+        className="mx-auto max-w-[660px] text-fluid-h2 font-extrabold tracking-[-0.015em] text-white"
       >
         Numbaz makes it simple to track everything.
       </h2>
 
-      <p className="mx-auto mt-[27px] max-w-[640px] text-xl leading-8 text-muted">
+      <p className="mx-auto mt-5 max-w-[640px] text-[17px] leading-7 text-muted sm:text-xl sm:leading-8 md:mt-[27px]">
         No stress. No accounting knowledge needed. Just open the app and start
         tracking.
       </p>
 
-      <div className="mx-auto mt-[70.2px] grid max-w-[1287px] items-start gap-[27.2px] text-left lg:grid-cols-[minmax(0,1fr)_498.3px]">
-        <ul className="flex flex-col gap-[18px]">
+      <div className="mx-auto mt-10 grid max-w-[1287px] items-start gap-6 text-left md:mt-[70.2px] lg:grid-cols-[minmax(0,1fr)_clamp(380px,38.93vw,498.3px)] lg:gap-[27.2px]">
+        <ul className="flex min-w-0 flex-col gap-3.5 md:gap-[18px]">
           {BENEFITS.map(({ title, text }) => (
             <li
               key={title}
@@ -67,17 +67,19 @@ export default function Solution() {
               >
                 <CircleCheckBig className="size-4" strokeWidth={2} />
               </span>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-base leading-[22px] font-semibold text-white">
                   {title}
                 </h3>
-                <p className="text-[13.5px] leading-5 text-mint">{text}</p>
+                <p className="text-base leading-6 text-mint md:text-[13.5px] md:leading-5">
+                  {text}
+                </p>
               </div>
             </li>
           ))}
         </ul>
 
-        <div className="rounded-3xl border border-white/8 bg-card p-[27.5px]">
+        <div className="min-w-0 rounded-3xl border border-white/8 bg-card p-5 sm:p-[27.5px]">
           <p className="font-mono text-[12.3px] leading-4 tracking-wider text-mint">
             LIVE BUSINESS SNAPSHOT
           </p>
