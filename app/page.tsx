@@ -1,3 +1,4 @@
+import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Problem from "@/components/Problem";
@@ -15,6 +16,7 @@ export default function Home() {
         <Problem />
         <Solution />
         <HowItWorks />
+        <Features />
       </main>
     </>
   );
