@@ -10,13 +10,14 @@ or animation library.
 
 ## Status
 Built so far (desktop, static, no animation): sticky nav, hero (including the
-phone mockup and two floating cards), ticker strip, problem and solution
-sections (`components/SiteHeader.tsx`, `Hero.tsx`, `PhoneMockup.tsx`,
-`Ticker.tsx`, `Problem.tsx`, `Solution.tsx`). Tokens and fonts are
-provisional (Inter + Source Code Pro; real names unknown). Remaining sections
-and the signup popup are not built. Anchors `#how-it-works` and `#features`
-have no targets yet. Design exports are in `Design exports/` (local only,
-gitignored).
+phone mockup and two floating cards), ticker strip, and the problem,
+solution and how-it-works sections (`components/SiteHeader.tsx`, `Hero.tsx`,
+`PhoneMockup.tsx`, `Ticker.tsx`, `Problem.tsx`, `Solution.tsx`,
+`HowItWorks.tsx`). Tokens and fonts are provisional (Inter + Source Code Pro;
+real names unknown). Remaining sections and the signup popup are not built.
+The `#features` anchor has no target yet. Anchor offset for the sticky nav
+is the global `scroll-padding-top` in `app/globals.css`. Design exports are in
+`Design exports/` (local only, gitignored).
 
 ## Rules
 - No secrets in git. `.env` stays gitignored.

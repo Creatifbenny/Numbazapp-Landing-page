@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
 import Problem from "@/components/Problem";
 import SiteHeader from "@/components/SiteHeader";
 import Solution from "@/components/Solution";
@@ -13,6 +14,7 @@ export default function Home() {
         <Ticker />
         <Problem />
         <Solution />
+        <HowItWorks />
       </main>
     </>
   );
