@@ -11,7 +11,7 @@ const AVATARS = [
 export default function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="hero-bg">
-      <div className="mx-auto grid max-w-[1328px] items-center px-6 pt-[90px] pb-[108px] lg:grid-cols-[minmax(0,1fr)_608px]">
+      <div className="mx-auto grid max-w-[1328px] items-center px-6 pt-[90px] pb-[109.4px] lg:grid-cols-[minmax(0,1fr)_608px]">
         <div>
           <p className="mb-7 inline-flex items-center gap-2 rounded-full border border-mint/35 bg-mint/12 px-4 py-1.75 font-mono text-xs tracking-wider text-mint">
             <span

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import SiteHeader from "@/components/SiteHeader";
+import Ticker from "@/components/Ticker";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <Ticker />
       </main>
     </>
   );
