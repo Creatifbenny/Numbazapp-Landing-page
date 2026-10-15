@@ -28,20 +28,20 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-heading"
-      className="px-6 pt-[107.1px] pb-27 text-center"
+      className="px-5 pt-[72px] pb-[72px] text-center sm:px-8 md:pt-24 md:pb-24 xl:px-6 xl:pt-[107.1px] xl:pb-27"
     >
-      <p className="mx-auto mb-[26px] inline-block rounded-full border border-blue/30 bg-blue/12 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-blue">
+      <p className="mx-auto mb-5 inline-block sm:mb-[26px] rounded-full border border-blue/30 bg-blue/12 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-blue">
         HOW IT WORKS
       </p>
 
       <h2
         id="how-it-works-heading"
-        className="mx-auto max-w-[900px] text-[55px] leading-[67.2px] font-extrabold tracking-[-0.015em] text-white"
+        className="mx-auto max-w-[900px] text-fluid-h2 font-extrabold tracking-[-0.015em] text-white"
       >
         Start tracking in 3 simple steps
       </h2>
 
-      <ol className="mx-auto mt-[71.8px] grid max-w-[1144px] grid-cols-1 gap-[25.6px] text-left md:grid-cols-3">
+      <ol className="mx-auto mt-10 grid max-w-[1144px] grid-cols-1 gap-4 text-left md:mt-[71.8px] md:gap-5 lg:grid-cols-3 lg:gap-[25.6px]">
         {STEPS.map(({ number, title, text }) => (
           <li
             key={number}
