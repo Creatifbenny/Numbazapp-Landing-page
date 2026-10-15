@@ -39,20 +39,20 @@ export default function Features() {
     <section
       id="features"
       aria-labelledby="features-heading"
-      className="px-6 pt-[105.5px] pb-27 text-center"
+      className="px-5 pt-[72px] pb-[72px] text-center sm:px-8 md:pt-24 md:pb-24 xl:px-6 xl:pt-[105.5px] xl:pb-27"
     >
       <h2
         id="features-heading"
-        className="mx-auto max-w-[900px] text-[55px] leading-[67.2px] font-extrabold tracking-[-0.015em] text-white"
+        className="mx-auto max-w-[900px] text-fluid-h2 font-extrabold tracking-[-0.015em] text-white"
       >
         Stop guessing. Start knowing.
       </h2>
 
-      <p className="mx-auto mt-[18px] max-w-[640px] text-xl leading-8 text-muted">
+      <p className="mx-auto mt-3.5 max-w-[640px] text-[17px] leading-7 text-muted sm:text-xl sm:leading-8 md:mt-[18px]">
         Everything your business needs to grow with confidence.
       </p>
 
-      <ul className="mx-auto mt-[71.1px] grid max-w-[1144px] grid-cols-1 gap-x-[27.4px] gap-y-[26.1px] text-left md:grid-cols-2">
+      <ul className="mx-auto mt-10 grid max-w-[1144px] grid-cols-1 gap-4 text-left sm:grid-cols-2 md:mt-[71.1px] md:gap-x-[27.4px] md:gap-y-[26.1px]">
         {FEATURES.map(({ title, text, Icon, tile }) => (
           <li
             key={title}
@@ -67,7 +67,7 @@ export default function Features() {
             <h3 className="mt-[20.7px] text-xl leading-7 font-semibold text-white">
               {title}
             </h3>
-            <p className="mt-[4.6px] text-[15.6px] leading-[25.3px] text-muted">
+            <p className="mt-[4.6px] text-base leading-[25.3px] text-muted md:text-[15.6px]">
               {text}
             </p>
           </li>
