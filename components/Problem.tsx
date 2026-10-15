@@ -11,26 +11,26 @@ export default function Problem() {
   return (
     <section
       aria-labelledby="problem-heading"
-      className="px-6 pt-[108.8px] pb-27 text-center"
+      className="px-5 pt-[72px] pb-[72px] text-center sm:px-8 md:pt-24 md:pb-24 xl:px-6 xl:pt-[108.8px] xl:pb-27"
     >
-      <p className="mx-auto mb-[26px] inline-block rounded-full border border-red/30 bg-red/10 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-red">
+      <p className="mx-auto mb-5 inline-block sm:mb-[26px] rounded-full border border-red/30 bg-red/10 px-[15px] py-[5.5px] font-mono text-xs tracking-wider text-red">
         THE PROBLEM
       </p>
 
       <h2
         id="problem-heading"
-        className="mx-auto max-w-[800px] text-[55px] leading-[67.2px] font-extrabold tracking-[-0.015em] text-white"
+        className="mx-auto max-w-[800px] text-fluid-h2 font-extrabold tracking-[-0.015em] text-white"
       >
         Most small businesses don&apos;t really know their numbers.
       </h2>
 
-      <p className="mx-auto mt-9 max-w-[560px] text-xl leading-8 text-muted">
+      <p className="mx-auto mt-5 max-w-[560px] text-[17px] leading-7 text-muted sm:text-xl sm:leading-8 md:mt-9">
         You sell every day. You spend every day.
         <br />
         But at the end of the week, you&apos;re guessing:
       </p>
 
-      <ul className="mx-auto mt-[47px] grid max-w-[857.5px] grid-cols-1 gap-5 md:grid-cols-3">
+      <ul className="mx-auto mt-8 grid max-w-[857.5px] grid-cols-1 gap-4 md:mt-[47px] md:grid-cols-3 md:gap-5">
         {QUESTIONS.map((question) => (
           <li
             key={question}
@@ -41,10 +41,10 @@ export default function Problem() {
         ))}
       </ul>
 
-      <p className="mt-11 text-xl leading-8 text-body">
+      <p className="mt-8 text-[17px] leading-7 text-body sm:text-xl sm:leading-8 md:mt-11">
         Without clear records, your business feels like guesswork.
       </p>
-      <p className="mt-3.5 text-[22px] leading-8 font-bold text-white">
+      <p className="mt-3.5 text-[19px] leading-7 font-bold text-white sm:text-[22px] sm:leading-8">
         And guesswork kills growth.
       </p>
     </section>

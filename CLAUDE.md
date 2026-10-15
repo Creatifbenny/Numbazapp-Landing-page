@@ -17,10 +17,11 @@ The popup calls `submitWaitlist` in `lib/waitlist.ts`, a placeholder that
 waits 800ms and returns success; the real signup route plugs in there and
 nothing is saved yet. The popup shows a "Preview only" note unless
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
-(Inter + Source Code Pro; real names unknown). Responsive work in progress: the nav has
-a hamburger menu below 768px (`components/MobileMenu.tsx`) and the hero
-stacks below 1024px with the phone centred; later sections are desktop-only
-until their responsive commits land. Not built: the signup
+(Inter + Source Code Pro; real names unknown). Responsive so far: nav (hamburger menu below
+768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
+phone centred), ticker and problem sections. Desktop (1280px and up) is the
+unchanged design. The solution, how-it-works, features, closing, final CTA
+and footer sections are still desktop-only and overflow below about 340px. Not built: the signup
 backend, animations. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in

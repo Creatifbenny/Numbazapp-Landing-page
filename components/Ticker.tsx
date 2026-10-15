@@ -15,7 +15,7 @@ function Row({ hidden = false }: { hidden?: boolean }) {
   return (
     <ul
       aria-hidden={hidden || undefined}
-      className="flex shrink-0 items-center gap-14 pr-14"
+      className="flex shrink-0 items-center gap-10 pr-10 sm:gap-14 sm:pr-14"
     >
       {MESSAGES.map((message) => (
         <li key={message} className="whitespace-nowrap">
@@ -30,7 +30,7 @@ export default function Ticker() {
   return (
     <section
       aria-label="Sample messages from the Numbaz app"
-      className="flex h-[58.5px] items-center overflow-hidden bg-mint font-mono text-[15.5px] text-background"
+      className="flex h-12 items-center overflow-hidden bg-mint font-mono text-[13px] text-background sm:h-[58.5px] sm:text-[15.5px]"
     >
       <Row />
       <Row hidden />

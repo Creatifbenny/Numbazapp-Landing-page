@@ -65,6 +65,9 @@
 @theme {
   --text-fluid-h1: clamp(40px, calc(40px + (100vw - 375px) * 0.03094), 68px);
   --text-fluid-h1--line-height: clamp(49.1px, calc(49.1px + (100vw - 375px) * 0.038011), 83.5px);
+  /* Section H2: 30px at 375px wide up to the desktop 55px / 67.2px at 1280px. */
+  --text-fluid-h2: clamp(30px, calc(30px + (100vw - 375px) * 0.02762), 55px);
+  --text-fluid-h2--line-height: clamp(36.7px, calc(36.7px + (100vw - 375px) * 0.0337), 67.2px);
 }
 
 /*
