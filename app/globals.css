@@ -54,3 +54,16 @@ body {
     calc(50% + 75.9px) 0,
     0 68.5px;
 }
+
+/*
+ * Final CTA section glow (APPROXIMATE, measured from desktop.png): a soft
+ * green ellipse centred on the bottom edge of the section, about 9% of the
+ * primary colour at its peak.
+ */
+.final-cta-bg {
+  background-image: radial-gradient(
+    ellipse 360px 160px at 50% 100%,
+    color-mix(in srgb, var(--color-primary) 9%, transparent),
+    transparent
+  );
+}

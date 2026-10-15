@@ -9,14 +9,16 @@ Next.js (App Router), TypeScript, Tailwind CSS v4 (config lives in CSS:
 or animation library.
 
 ## Status
-Built so far (desktop, static, no animation): sticky nav, hero (including the
-phone mockup and two floating cards), ticker strip, and the problem,
-solution, how-it-works and features sections (`components/SiteHeader.tsx`,
-`Hero.tsx`, `PhoneMockup.tsx`, `Ticker.tsx`, `Problem.tsx`, `Solution.tsx`,
-`HowItWorks.tsx`, `Features.tsx`). Tokens and fonts are provisional (Inter +
-Source Code Pro; real names unknown). Closing statement, final CTA, footer
-and the signup popup are not built. Nav and button anchors (`#how-it-works`,
-`#features`) have real targets; the sticky-nav offset is the global
+Desktop page built (static, no animation): sticky nav, hero (including the
+phone mockup and two floating cards), ticker strip, problem, solution,
+how-it-works and features sections, closing statement, final CTA panel and
+footer (`components/SiteHeader.tsx`, `Hero.tsx`, `PhoneMockup.tsx`,
+`Ticker.tsx`, `Problem.tsx`, `Solution.tsx`, `HowItWorks.tsx`,
+`Features.tsx`, `ClosingStatement.tsx`, `FinalCta.tsx`, `SiteFooter.tsx`).
+Tokens and fonts are provisional (Inter + Source Code Pro; real names
+unknown). Not built: signup popup (three `data-waitlist-trigger` buttons are
+in place), animations, mobile and tablet layouts. Anchors `#how-it-works` and
+`#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).
 
