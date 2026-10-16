@@ -7,7 +7,8 @@ Built from the desktop Figma export and deployed on Vercel.
 and the waitlist popup opens from every "Get Early Access" button (UI only:
 `lib/waitlist.ts` is a placeholder, nothing is saved yet). Responsive layouts are
 added for every section (done: nav, hero and phone, ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections).
-Not built: the signup backend and animations. Design tokens in
+The nav and footer use the real Numbaz logo from `public/brand/` (raster
+PNGs; do not scale them up). Not built: the signup backend and animations. Design tokens in
 `app/tokens.css` are provisional (sampled from PNGs) and the fonts are
 provisional stand-ins.
 

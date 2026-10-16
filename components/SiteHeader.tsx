@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 
 export default function SiteHeader() {
@@ -9,16 +10,18 @@ export default function SiteHeader() {
       >
         <a
           href="#"
-          className="flex min-h-11 items-center gap-2.5"
+          className="flex min-h-11 items-center"
           aria-label="Numbaz home"
         >
-          <span
-            aria-hidden="true"
-            className="flex size-9 items-center justify-center rounded-lg bg-primary font-mono text-base font-bold text-white"
-          >
-            N
-          </span>
-          <span className="text-[19px] font-bold text-white">Numbaz</span>
+          <Image
+            src="/brand/logo-lockup.png"
+            alt="Numbaz"
+            width={775}
+            height={156}
+            sizes="140px"
+            preload
+            className="h-6 w-auto md:h-7"
+          />
         </a>
 
         <div className="hidden items-center gap-9 md:flex">

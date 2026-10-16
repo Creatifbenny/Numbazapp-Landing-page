@@ -20,8 +20,9 @@ nothing is saved yet. The popup shows a "Preview only" note unless
 (Inter + Source Code Pro; real names unknown). Responsive at every width from 320px up: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
 phone centred), ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections. Desktop (1280px and up) is the unchanged design.
-Not built: the signup
-backend, animations. Anchors `#how-it-works` and
+The nav and footer use the client's real logo
+(`public/brand/logo-lockup.png` 775x156 and `logo-mark.png` 138x138; raster,
+never scale up). Not built: the signup backend, animations. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).
