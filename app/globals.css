@@ -90,6 +90,16 @@ body {
   }
 }
 
+/* The bottom card bobs downward so it never rises into the phone text above it. */
+@keyframes float-bob-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--bob, 10px));
+  }
+}
+
 @keyframes dot-pulse {
   0%,
   100% {
@@ -159,6 +169,10 @@ body {
     animation: float-bob var(--float-duration) ease-in-out var(--float-delay)
       infinite alternate;
     will-change: transform;
+  }
+
+  .float-card-b {
+    animation-name: float-bob-down;
   }
 
   .pill-dot {
