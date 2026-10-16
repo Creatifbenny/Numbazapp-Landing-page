@@ -29,8 +29,10 @@ Open Graph and Twitter cards, theme colour; site URL from
 (180) and `app/opengraph-image.tsx` (1200x630, static) are built from the logo
 mark and lock-up. Motion is pure CSS in `app/globals.css` (transform and opacity only, all off
 under `prefers-reduced-motion: reduce`): the ticker marquee (45s loop, pauses
-on hover and focus), a gentle bob on the two floating phone cards, and a pulse
-on the hero pill dot, plus a one-time word-by-word reveal of the hero headline
+on hover and focus), a bob on the two floating phone cards (10px below 1024px, 12px from 1024px up,
+3.4s and 4s cycles), and a pulse
+on the hero pill dot, plus a one-time word-by-word reveal of the hero headline (150ms apart, 450ms each,
+1.2s in total)
 (`components/HeroHeadline.tsx`; per word, not per letter, because per-letter
 splitting lost kerning and changed line widths by up to about 4px). Not built: the signup backend. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global

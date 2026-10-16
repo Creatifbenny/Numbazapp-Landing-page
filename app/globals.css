@@ -86,7 +86,7 @@ body {
     transform: translateY(0);
   }
   to {
-    transform: translateY(calc(-1 * var(--bob, 6px)));
+    transform: translateY(calc(-1 * var(--bob, 10px)));
   }
 }
 
@@ -112,23 +112,25 @@ body {
 }
 
 .float-card {
-  --bob: 6px;
+  --bob: 10px;
 }
 
 @media (min-width: 1024px) {
   .float-card {
-    --bob: 8px;
+    --bob: 12px;
   }
 }
 
 .float-card-a {
-  --float-duration: 2.6s;
+  /* Alternate runs forward then back, so a full cycle is twice the duration: 3.4s. */
+  --float-duration: 1.7s;
   --float-delay: 0s;
 }
 
 .float-card-b {
-  --float-duration: 3s;
-  --float-delay: 0.8s;
+  /* Full cycle 4s, starting 0.6s after card A. */
+  --float-duration: 2s;
+  --float-delay: 0.6s;
 }
 
 .pill-dot::after {
@@ -185,10 +187,10 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* 90ms between words, 300ms each: six words finish in about 0.75s. */
+  /* 150ms between words, 450ms each: six words finish at 5 x 150 + 450 = 1.2s. */
   .reveal-word {
-    animation: word-reveal 300ms ease-out both;
-    animation-delay: calc(var(--i) * 90ms);
+    animation: word-reveal 450ms ease-out both;
+    animation-delay: calc(var(--i) * 150ms);
   }
 }
 
