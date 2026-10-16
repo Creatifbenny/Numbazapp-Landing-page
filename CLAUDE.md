@@ -9,7 +9,7 @@ Next.js (App Router), TypeScript, Tailwind CSS v4 (config lives in CSS:
 or animation library.
 
 ## Status
-Desktop page built (static, no animation): sticky nav, hero (including the
+Page built (statically rendered): sticky nav, hero (including the
 phone mockup and two floating cards), ticker strip, problem, solution,
 how-it-works and features sections, closing statement, final CTA panel and
 footer, plus the waitlist popup (`components/WaitlistDialog.tsx`, UI only).
@@ -27,7 +27,10 @@ Open Graph and Twitter cards, theme colour; site URL from
 `NEXT_PUBLIC_SITE_URL`, default `https://numbazapp.vercel.app`, switch to
 `https://numbazapp.com` once live). `app/icon.png` (48), `app/apple-icon.png`
 (180) and `app/opengraph-image.tsx` (1200x630, static) are built from the logo
-mark and lock-up. Not built: the signup backend, animations. Anchors `#how-it-works` and
+mark and lock-up. Motion is pure CSS in `app/globals.css` (transform and opacity only, all off
+under `prefers-reduced-motion: reduce`): the ticker marquee (45s loop, pauses
+on hover and focus), a gentle bob on the two floating phone cards, and a pulse
+on the hero pill dot. Not built: the signup backend. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).

@@ -174,7 +174,7 @@ export default function PhoneMockup() {
         </div>
 
         {/* Floating card: top right */}
-        <div className="absolute top-[80.8px] left-[min(168.4px,calc(136.7px_+_(100vw_-_332px)/2))] flex h-[54.4px] w-[155.3px] items-center gap-2.5 rounded-2xl border border-float-green-border bg-background px-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+        <div className="float-card float-card-a absolute top-[80.8px] left-[min(168.4px,calc(136.7px_+_(100vw_-_332px)/2))] flex h-[54.4px] w-[155.3px] items-center gap-2.5 rounded-2xl border border-float-green-border bg-background px-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
           <span className="flex size-[31px] shrink-0 items-center justify-center rounded-lg bg-float-green-tile text-primary">
             <TrendingUp className="size-3.5" strokeWidth={2} />
           </span>
@@ -189,7 +189,7 @@ export default function PhoneMockup() {
         </div>
 
         {/* Floating card: bottom left */}
-        <div className="absolute top-[492.7px] left-[max(-35.7px,calc((100vw_-_332px)/-2))] flex h-[55.1px] w-[179.5px] items-center gap-2.5 rounded-2xl border border-float-blue-border bg-background px-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+        <div className="float-card float-card-b absolute top-[492.7px] left-[max(-35.7px,calc((100vw_-_332px)/-2))] flex h-[55.1px] w-[179.5px] items-center gap-2.5 rounded-2xl border border-float-blue-border bg-background px-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
           <span className="flex size-[31px] shrink-0 items-center justify-center rounded-lg bg-float-blue-tile text-blue">
             <Users className="size-3.5" strokeWidth={2} />
           </span>

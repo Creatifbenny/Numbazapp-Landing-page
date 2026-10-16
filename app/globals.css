@@ -67,3 +67,109 @@ body {
     transparent
   );
 }
+
+/*
+ * Motion (pure CSS, transform and opacity only). All of it is off under
+ * prefers-reduced-motion: reduce.
+ */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-1 * var(--bob, 6px)));
+  }
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes dot-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.float-card {
+  --bob: 6px;
+}
+
+@media (min-width: 1024px) {
+  .float-card {
+    --bob: 8px;
+  }
+}
+
+.float-card-a {
+  --float-duration: 2.6s;
+  --float-delay: 0s;
+}
+
+.float-card-b {
+  --float-duration: 3s;
+  --float-delay: 0.8s;
+}
+
+.pill-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--color-mint);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* One loop is one group width: about 45s (about 81px/s on desktop, slower
+     on mobile where the groups are narrower). */
+  .ticker-track {
+    animation: ticker-scroll 45s linear infinite;
+    will-change: transform;
+  }
+
+  .ticker:hover .ticker-track,
+  .ticker:focus-within .ticker-track {
+    animation-play-state: paused;
+  }
+
+  .float-card {
+    animation: float-bob var(--float-duration) ease-in-out var(--float-delay)
+      infinite alternate;
+    will-change: transform;
+  }
+
+  .pill-dot {
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .pill-dot::after {
+    animation: dot-ring 2s ease-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-dup {
+    display: none;
+  }
+}

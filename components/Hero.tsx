@@ -16,7 +16,7 @@ export default function Hero() {
           <p className="mb-7 inline-flex items-center gap-2 rounded-full border border-mint/35 bg-mint/12 px-4 py-1.75 font-mono text-xs tracking-wider text-mint">
             <span
               aria-hidden="true"
-              className="size-1.5 rounded-full bg-mint"
+              className="pill-dot relative size-1.5 rounded-full bg-mint"
             />
             EARLY ACCESS OPEN
           </p>
