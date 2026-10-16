@@ -44,3 +44,72 @@ splitting lost kerning and changed line widths by up to about 4px). Not built: t
 - Every push names its remote. No push without the owner's go-ahead.
 - Risky changes go on a branch.
 - Update this file in the same step as any change that makes it stale.
+
+## State for a fresh session
+### Where things stand
+- Work is on branch `v1` (`main` only holds the scaffold). Nothing on `v1` is
+  pushed; the owner decides when.
+- Page order (`app/page.tsx`): sticky nav (`SiteHeader`, hamburger below 768px)
+  -> Hero (pill, headline, lead, two buttons, waitlist proof, phone mockup with
+  two floating cards) -> Ticker -> Problem -> Solution -> How it works
+  (`#how-it-works`) -> Features (`#features`) -> closing statement -> final CTA
+  panel -> footer. `WaitlistDialog` is mounted once after the footer.
+- Popup: native `<dialog>`, opened by any `[data-waitlist-trigger]` (nav, hero,
+  final CTA, menu button). UI only. It calls the stub `submitWaitlist` in
+  `lib/waitlist.ts` (waits 800ms, returns ok, saves nothing). A honeypot field
+  `company` is built in. "Preview only" note shows unless
+  `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`.
+- Real logo: `public/brand/logo-lockup.png` (775x156) and `logo-mark.png`
+  (138x138), raster. Nav shows the lock-up 28px high (24px on mobile), footer
+  the mark at 27px.
+- Metadata in `app/layout.tsx` (title, description, Open Graph, Twitter,
+  theme colour; `NEXT_PUBLIC_SITE_URL`, default `https://numbazapp.vercel.app`).
+  `app/icon.png` (48), `app/apple-icon.png` (180), `app/opengraph-image.tsx`
+  (1200x630, regular-weight text; a bold look would need a font file).
+- Motion (pure CSS in `app/globals.css`, transform and opacity only, all off
+  under reduced motion): ticker marquee (45s loop, pauses on hover and focus),
+  floating cards (A bobs up, B bobs down; 10px below 1024px, 12px from 1024px
+  up; 3.4s and 4s cycles), pill-dot pulse, headline word-by-word reveal
+  (150ms apart, 450ms each; per word because per-letter lost kerning).
+- Responsive: breakpoints 640/768/1024/1280. Desktop (1280px and up) is the
+  approved design and must not change. Fluid type tokens are in `tokens.css`.
+- Not built: the real signup backend (storage, welcome email), analytics, any
+  footer links, any API route or env file. Tokens and fonts are provisional.
+
+### The 1440px baseline (layout width 1440, animations at rest)
+- `scrollHeight` 5523; header 77 tall; hero bottom 965.7.
+- Ticker 0, 965.7, 1440 x 58.5. Headline `<h1>` 80, 227, 672 x 334 (68px/83.5px).
+- Phone body 910, 183.7, 292 x 656. Floating cards at rest: top 1078.4, 264.5,
+  155.3 x 54.4; bottom 874.3, 676.3, 179.5 x 55.1.
+- Final CTA panel 291.3, 4813.7, 857.5 x 502.3. Footer top 5424, height 99.
+- Section tops: solution 1788.4, how it works 2828.5, features 3470.3,
+  closing 4284, final CTA 4707.3.
+
+### How we work
+- Start every change by inspecting the repo: report `git status`, the branch and
+  recent `git log`. Stop if the tree is not clean or the branch is wrong.
+- Measure at 1440 before and after and confirm nothing else moved. Check
+  `scrollWidth` equals the layout width at 320, 375, 768, 1024 and 1440.
+- Run build, lint and typecheck and report the output verbatim. Confirm `/` is
+  still listed as static in the build.
+- One concern per commit. Update the status lines here and in `README.md` in
+  the same commit. Never push, fetch or touch a remote.
+- Add no dependencies without asking. Stop and list an OPEN DECISION instead of
+  guessing. Finish with an honest "not checked" list.
+- Browser pane tips: width 1455 gives a layout width of 1440 (15px scrollbar);
+  animations only advance after a screenshot, so seek them with
+  `document.getAnimations()`; restart `next dev` if new CSS is not served.
+
+### Things never to do
+- Run `npm audit fix --force`. Commit anything from `Design exports/` or any
+  `.env` file. Scale the logo above its native size. Add entrance or scroll
+  animations. Restyle the approved desktop design. Hardcode hex values in
+  components (use tokens; add a PROVISIONAL token if one is missing).
+
+### Known small issues, accepted
+- At 320px wide the top floating card overlaps the "Emeka shops" text on the
+  phone mockup (decorative, rare width).
+
+### Open decisions
+- Where signups are stored, how the welcome email is sent, and analytics:
+  decided in the chat project, not in this repo.
