@@ -8,7 +8,10 @@ and the waitlist popup opens from every "Get Early Access" button (UI only:
 `lib/waitlist.ts` is a placeholder, nothing is saved yet). Responsive layouts are
 added for every section (done: nav, hero and phone, ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections).
 The nav and footer use the real Numbaz logo from `public/brand/` (raster
-PNGs; do not scale them up). Not built: the signup backend and animations. Design tokens in
+PNGs; do not scale them up). Page metadata, favicon, Apple touch icon and a
+share image are set up (`app/layout.tsx`, `app/icon.png`, `app/apple-icon.png`,
+`app/opengraph-image.tsx`); set `NEXT_PUBLIC_SITE_URL` when the domain changes.
+Not built: the signup backend and animations. Design tokens in
 `app/tokens.css` are provisional (sampled from PNGs) and the fonts are
 provisional stand-ins.
 

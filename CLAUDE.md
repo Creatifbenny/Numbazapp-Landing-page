@@ -22,7 +22,12 @@ nothing is saved yet. The popup shows a "Preview only" note unless
 phone centred), ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections. Desktop (1280px and up) is the unchanged design.
 The nav and footer use the client's real logo
 (`public/brand/logo-lockup.png` 775x156 and `logo-mark.png` 138x138; raster,
-never scale up). Not built: the signup backend, animations. Anchors `#how-it-works` and
+never scale up). Page metadata is in `app/layout.tsx` (title, description,
+Open Graph and Twitter cards, theme colour; site URL from
+`NEXT_PUBLIC_SITE_URL`, default `https://numbazapp.vercel.app`, switch to
+`https://numbazapp.com` once live). `app/icon.png` (48), `app/apple-icon.png`
+(180) and `app/opengraph-image.tsx` (1200x630, static) are built from the logo
+mark and lock-up. Not built: the signup backend, animations. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).
