@@ -168,6 +168,30 @@ body {
   }
 }
 
+/* One-time hero headline reveal: each word slides in from the left and fades in. */
+@keyframes word-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(-0.35em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal-word {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 90ms between words, 300ms each: six words finish in about 0.75s. */
+  .reveal-word {
+    animation: word-reveal 300ms ease-out both;
+    animation-delay: calc(var(--i) * 90ms);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-dup {
     display: none;

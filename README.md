@@ -11,7 +11,8 @@ The nav and footer use the real Numbaz logo from `public/brand/` (raster
 PNGs; do not scale them up). Page metadata, favicon, Apple touch icon and a
 share image are set up (`app/layout.tsx`, `app/icon.png`, `app/apple-icon.png`,
 `app/opengraph-image.tsx`); set `NEXT_PUBLIC_SITE_URL` when the domain changes.
-Motion is pure CSS (ticker marquee, floating-card bob, pill-dot pulse) and is
+Motion is pure CSS (ticker marquee, floating-card bob, pill-dot pulse, one-time
+hero headline reveal) and is
 off under `prefers-reduced-motion: reduce`. Not built: the signup backend. Design tokens in
 `app/tokens.css` are provisional (sampled from PNGs) and the fonts are
 provisional stand-ins.

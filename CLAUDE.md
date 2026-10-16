@@ -30,7 +30,9 @@ Open Graph and Twitter cards, theme colour; site URL from
 mark and lock-up. Motion is pure CSS in `app/globals.css` (transform and opacity only, all off
 under `prefers-reduced-motion: reduce`): the ticker marquee (45s loop, pauses
 on hover and focus), a gentle bob on the two floating phone cards, and a pulse
-on the hero pill dot. Not built: the signup backend. Anchors `#how-it-works` and
+on the hero pill dot, plus a one-time word-by-word reveal of the hero headline
+(`components/HeroHeadline.tsx`; per word, not per letter, because per-letter
+splitting lost kerning and changed line widths by up to about 4px). Not built: the signup backend. Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).

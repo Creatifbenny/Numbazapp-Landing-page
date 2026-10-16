@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import HeroHeadline from "./HeroHeadline";
 import PhoneMockup from "./PhoneMockup";
 
 const AVATARS = [
@@ -21,18 +22,7 @@ export default function Hero() {
             EARLY ACCESS OPEN
           </p>
 
-          <h1
-            id="hero-heading"
-            className="text-fluid-h1 font-extrabold tracking-[-0.015em] text-white"
-          >
-            Know your
-            <br />
-            <span className="text-mint">Numbaz.</span>
-            <br />
-            Grow your
-            <br />
-            business.
-          </h1>
+          <HeroHeadline />
 
           <p className="mt-6 max-w-[640px] text-[17px] leading-7 text-body sm:text-xl sm:leading-8">
             Track your daily sales, expenses, and profit in seconds — so you
