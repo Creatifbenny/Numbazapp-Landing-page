@@ -18,7 +18,7 @@ server route `app/api/waitlist/route.ts`; the route validates and forwards to
 a Google Apps Script web app. Tested against a local fake of that script only:
 the real `WAITLIST_SCRIPT_URL` and `WAITLIST_SECRET` (server-only, read at
 request time, set later in Vercel by the owner) are not set, so nothing is
-saved yet. The popup shows a "Preview only" note unless
+saved yet. The welcome-email footer image is at `public/email/numbaz-email-footer.png` (1200x600, 57 KB, served at `/email/numbaz-email-footer.png`). The popup shows a "Preview only" note unless
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
 (Inter + Source Code Pro; real names unknown). Responsive at every width from 320px up: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
