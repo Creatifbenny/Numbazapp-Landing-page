@@ -12,10 +12,13 @@ or animation library.
 Page built (statically rendered): sticky nav, hero (including the
 phone mockup and two floating cards), ticker strip, problem, solution,
 how-it-works and features sections, closing statement, final CTA panel and
-footer, plus the waitlist popup (`components/WaitlistDialog.tsx`, UI only).
-The popup calls `submitWaitlist` in `lib/waitlist.ts`, a placeholder that
-waits 800ms and returns success; the real signup route plugs in there and
-nothing is saved yet. The popup shows a "Preview only" note unless
+footer, plus the waitlist popup (`components/WaitlistDialog.tsx`).
+The popup calls `submitWaitlist` in `lib/waitlist.ts`, which posts to the
+server route `app/api/waitlist/route.ts`; the route validates and forwards to
+a Google Apps Script web app. Tested against a local fake of that script only:
+the real `WAITLIST_SCRIPT_URL` and `WAITLIST_SECRET` (server-only, read at
+request time, set later in Vercel by the owner) are not set, so nothing is
+saved yet. The popup shows a "Preview only" note unless
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
 (Inter + Source Code Pro; real names unknown). Responsive at every width from 320px up: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
@@ -34,7 +37,7 @@ on hover and focus), a bob on the two floating phone cards (10px below 1024px, 1
 on the hero pill dot, plus a one-time word-by-word reveal of the hero headline (150ms apart, 450ms each,
 1.2s in total)
 (`components/HeroHeadline.tsx`; per word, not per letter, because per-letter
-splitting lost kerning and changed line widths by up to about 4px). Not built: the signup backend. Anchors `#how-it-works` and
+splitting lost kerning and changed line widths by up to about 4px). Anchors `#how-it-works` and
 `#features` have real targets; the sticky-nav offset is the global
 `scroll-padding-top` in `app/globals.css`. Design exports are in
 `Design exports/` (local only, gitignored).
@@ -55,10 +58,18 @@ splitting lost kerning and changed line widths by up to about 4px). Not built: t
   (`#how-it-works`) -> Features (`#features`) -> closing statement -> final CTA
   panel -> footer. `WaitlistDialog` is mounted once after the footer.
 - Popup: native `<dialog>`, opened by any `[data-waitlist-trigger]` (nav, hero,
-  final CTA, menu button). UI only. It calls the stub `submitWaitlist` in
-  `lib/waitlist.ts` (waits 800ms, returns ok, saves nothing). A honeypot field
-  `company` is built in. "Preview only" note shows unless
-  `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`.
+  final CTA, menu button). It calls `submitWaitlist` in `lib/waitlist.ts`,
+  which posts JSON to `/api/waitlist` (dynamic route). The route: JSON
+  content-type only (415), body under 2 KB (413), Origin host must match Host
+  (403), trims and validates name/email (400), honeypot `company` returns ok
+  without calling upstream, missing env returns 503 `not_configured`, then
+  POSTs `{secret, name, email}` as text/plain to the Apps Script (follows the
+  302, 10s timeout). Upstream ok (duplicate or not) returns `{ok:true}`;
+  `invalid_name`/`invalid_email` return 400; everything else 502
+  `upstream_error`. It logs only short error categories. Env vars:
+  `WAITLIST_SCRIPT_URL`, `WAITLIST_SECRET` (see `.env.example`; never commit
+  values). "Preview only" note shows unless `NEXT_PUBLIC_WAITLIST_LIVE` is
+  `"true"`; it stays until the client approves going live.
 - Real logo: `public/brand/logo-lockup.png` (775x156) and `logo-mark.png`
   (138x138), raster. Nav shows the lock-up 28px high (24px on mobile), footer
   the mark at 27px.
@@ -73,8 +84,8 @@ splitting lost kerning and changed line widths by up to about 4px). Not built: t
   (150ms apart, 450ms each; per word because per-letter lost kerning).
 - Responsive: breakpoints 640/768/1024/1280. Desktop (1280px and up) is the
   approved design and must not change. Fluid type tokens are in `tokens.css`.
-- Not built: the real signup backend (storage, welcome email), analytics, any
-  footer links, any API route or env file. Tokens and fonts are provisional.
+- Not done: the real Apps Script URL and secret (route only tested against a
+  local fake), analytics, any footer links. Tokens and fonts are provisional.
 
 ### The 1440px baseline (layout width 1440, animations at rest)
 - `scrollHeight` 5523; header 77 tall; hero bottom 965.7.
