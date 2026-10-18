@@ -9,6 +9,9 @@ posts to the server route `app/api/waitlist/route.ts`, which forwards signups
 to a Google Apps Script web app; it is tested against a local fake of that
 script only. The real script URL and secret are not set, so nothing is saved
 yet, and the "Preview only" note stays until the client approves going live.
+Vercel Web Analytics counts page views only (no custom events on the Hobby
+plan; signups are counted from the Google Sheet); it collects once enabled in
+the Vercel dashboard.
 The welcome-email footer image is `public/email/numbaz-email-footer.png` (1200x600, 57 KB).
 Responsive layouts are
 added for every section (done: nav, hero and phone, ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections).

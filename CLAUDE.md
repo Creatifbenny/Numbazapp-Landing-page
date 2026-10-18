@@ -19,7 +19,10 @@ a Google Apps Script web app. Tested against a local fake of that script only:
 the real `WAITLIST_SCRIPT_URL` and `WAITLIST_SECRET` (server-only, read at
 request time, set later in Vercel by the owner) are not set, so nothing is
 saved yet. The welcome-email footer image is at `public/email/numbaz-email-footer.png` (1200x600, 57 KB, served at `/email/numbaz-email-footer.png`). The popup shows a "Preview only" note unless
-`NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Tokens and fonts are provisional
+`NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Analytics: Vercel Web Analytics,
+page views only (`<Analytics />` from `@vercel/analytics/next` in
+`app/layout.tsx`); no custom events (Hobby plan); signups are counted from the
+Google Sheet. It only collects once enabled in the Vercel dashboard. Tokens and fonts are provisional
 (Inter + Source Code Pro; real names unknown). Responsive at every width from 320px up: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
 phone centred), ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections. Desktop (1280px and up) is the unchanged design.
@@ -85,7 +88,8 @@ splitting lost kerning and changed line widths by up to about 4px). Anchors `#ho
 - Responsive: breakpoints 640/768/1024/1280. Desktop (1280px and up) is the
   approved design and must not change. Fluid type tokens are in `tokens.css`.
 - Not done: the real Apps Script URL and secret (route only tested against a
-  local fake), analytics, any footer links. Tokens and fonts are provisional.
+  local fake), any footer links. Analytics are page views only (Vercel Web
+  Analytics, no custom events; signups are counted from the Sheet). Tokens and fonts are provisional.
 
 ### The 1440px baseline (layout width 1440, animations at rest)
 - `scrollHeight` 5523; header 77 tall; hero bottom 965.7.
@@ -115,7 +119,9 @@ splitting lost kerning and changed line widths by up to about 4px). Anchors `#ho
 - Run `npm audit fix --force`. Commit anything from `Design exports/` or any
   `.env` file. Scale the logo above its native size. Add entrance or scroll
   animations. Restyle the approved desktop design. Hardcode hex values in
-  components (use tokens; add a PROVISIONAL token if one is missing).
+  components (use tokens; add a PROVISIONAL token if one is missing). Add
+  custom analytics events or any tracker beyond Vercel Web Analytics without
+  asking.
 
 ### Known small issues, accepted
 - At 320px wide the top floating card overlaps the "Emeka shops" text on the
