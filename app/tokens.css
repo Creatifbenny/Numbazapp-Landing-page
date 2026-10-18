@@ -22,7 +22,7 @@
   --color-orange: #f79009; /* expenses accent */
   --color-blue: #6172f3; /* credit / info accent */
   --color-red: #f04438; /* problem accent */
-  --color-ink: #101828; /* ring around waitlist avatars, dark text in phone */
+  --color-ink: #101828; /* dark text in phone */
   --color-light: #e6feff; /* footer text on dark, light mint-white */
   --color-faint: #4a5565; /* faintest text: fine print, footer right */
 }

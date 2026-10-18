@@ -2,13 +2,6 @@ import { ArrowRight } from "lucide-react";
 import HeroHeadline from "./HeroHeadline";
 import PhoneMockup from "./PhoneMockup";
 
-const AVATARS = [
-  { letter: "A", className: "bg-primary" },
-  { letter: "K", className: "bg-blue" },
-  { letter: "T", className: "bg-orange" },
-  { letter: "M", className: "bg-red" },
-];
-
 export default function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="hero-bg">
@@ -48,27 +41,6 @@ export default function Hero() {
             >
               See how it works
             </a>
-          </div>
-
-          <div className="mt-[34px] flex flex-wrap items-center gap-x-4 gap-y-3">
-            <ul className="flex" aria-hidden="true">
-              {AVATARS.map(({ letter, className }, i) => (
-                <li
-                  key={letter}
-                  className={`flex size-9 items-center justify-center rounded-full border-2 border-ink text-sm font-bold text-white ${className} ${i > 0 ? "-ml-2.25" : ""}`}
-                >
-                  {letter}
-                </li>
-              ))}
-            </ul>
-            <div>
-              <p className="text-[15.5px] leading-snug font-bold text-white">
-                500+ on the waitlist
-              </p>
-              <p className="text-[13.3px] leading-[18px] text-dim">
-                Small biz owners ready to grow
-              </p>
-            </div>
           </div>
         </div>
 

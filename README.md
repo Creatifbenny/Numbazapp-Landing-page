@@ -12,6 +12,9 @@ yet, and the "Preview only" note stays until the client approves going live.
 Vercel Web Analytics counts page views only (no custom events on the Hobby
 plan; signups are counted from the Google Sheet); it collects once enabled in
 the Vercel dashboard.
+The hero has no social-proof row: the unverified waitlist-count claim was
+removed before launch, and no user counts, avatars or testimonials should be
+added unless the client confirms they are true.
 The welcome-email footer image is `public/email/numbaz-email-footer.png` (1200x600, 57 KB).
 Responsive layouts are
 added for every section (done: nav, hero and phone, ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections).

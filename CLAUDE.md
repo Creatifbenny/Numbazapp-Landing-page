@@ -22,7 +22,9 @@ saved yet. The welcome-email footer image is at `public/email/numbaz-email-foote
 `NEXT_PUBLIC_WAITLIST_LIVE` is `"true"`. Analytics: Vercel Web Analytics,
 page views only (`<Analytics />` from `@vercel/analytics/next` in
 `app/layout.tsx`); no custom events (Hobby plan); signups are counted from the
-Google Sheet. It only collects once enabled in the Vercel dashboard. Tokens and fonts are provisional
+Google Sheet. It only collects once enabled in the Vercel dashboard. The
+hero has no social-proof row (the client removed the unverified waitlist-count
+claim before launch). Tokens and fonts are provisional
 (Inter + Source Code Pro; real names unknown). Responsive at every width from 320px up: nav (hamburger menu below
 768px, `components/MobileMenu.tsx`), hero and phone (stacks below 1024px,
 phone centred), ticker, problem, solution, how-it-works, features, closing, final CTA and footer sections. Desktop (1280px and up) is the unchanged design.
@@ -56,7 +58,7 @@ splitting lost kerning and changed line widths by up to about 4px). Anchors `#ho
 - Work is on branch `v1` (`main` only holds the scaffold). Nothing on `v1` is
   pushed; the owner decides when.
 - Page order (`app/page.tsx`): sticky nav (`SiteHeader`, hamburger below 768px)
-  -> Hero (pill, headline, lead, two buttons, waitlist proof, phone mockup with
+  -> Hero (pill, headline, lead, two buttons, phone mockup with
   two floating cards) -> Ticker -> Problem -> Solution -> How it works
   (`#how-it-works`) -> Features (`#features`) -> closing statement -> final CTA
   panel -> footer. `WaitlistDialog` is mounted once after the footer.
@@ -92,13 +94,21 @@ splitting lost kerning and changed line widths by up to about 4px). Anchors `#ho
   Analytics, no custom events; signups are counted from the Sheet). Tokens and fonts are provisional.
 
 ### The 1440px baseline (layout width 1440, animations at rest)
-- `scrollHeight` 5523; header 77 tall; hero bottom 965.7.
-- Ticker 0, 965.7, 1440 x 58.5. Headline `<h1>` 80, 227, 672 x 334 (68px/83.5px).
-- Phone body 910, 183.7, 292 x 656. Floating cards at rest: top 1078.4, 264.5,
-  155.3 x 54.4; bottom 874.3, 676.3, 179.5 x 55.1.
-- Final CTA panel 291.3, 4813.7, 857.5 x 502.3. Footer top 5424, height 99.
-- Section tops: solution 1788.4, how it works 2828.5, features 3470.3,
-  closing 4284, final CTA 4707.3.
+Re-measured after the unverified social-proof row was removed from the hero
+(before it: `scrollHeight` 5523, hero bottom 965.7; the hero got 33.3px
+shorter and its content re-centred on the phone).
+- `scrollHeight` 5490; header 0, 0, 1440 x 77; hero 0, 77, 1440 x 855.4
+  (bottom 932.4).
+- Ticker 0, 932.4, 1440 x 58.5. Headline `<h1>` 80, 247, 672 x 334 (68px/83.5px).
+- Phone body 910, 167, 292 x 656. Floating cards at rest: top 1078.4, 247.8,
+  155.3 x 54.4; bottom 874.3, 659.7, 179.5 x 55.1 (offsets from the phone body
+  unchanged: top card 80.8 below the phone top, 31.7 in from its right edge;
+  bottom card 492.7 below, 35.7 past its left edge).
+- Section tops and heights (x is 0, width 1440): problem 990.9 x 764.2,
+  solution 1755.1 x 1040.1, how it works 2795.2 x 641.9, features 3437 x 813.7,
+  closing 4250.7 x 423.3, final CTA 4674 x 716.7.
+- Final CTA panel 291.3, 4780.4, 857.5 x 502.3. Footer top 5390.7, height 99.
+- Stacked layouts (below 1024): one 56px gap between the buttons and the phone.
 
 ### How we work
 - Start every change by inspecting the repo: report `git status`, the branch and
@@ -121,7 +131,8 @@ splitting lost kerning and changed line widths by up to about 4px). Anchors `#ho
   animations. Restyle the approved desktop design. Hardcode hex values in
   components (use tokens; add a PROVISIONAL token if one is missing). Add
   custom analytics events or any tracker beyond Vercel Web Analytics without
-  asking.
+  asking. Add invented social proof (user counts, avatars, testimonials, logos
+  of customers) without the client confirming it is true.
 
 ### Known small issues, accepted
 - At 320px wide the top floating card overlaps the "Emeka shops" text on the
